@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>古桥新生—匠心技艺与数智融合赋能文脉传承</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "思源宋体", "宋体", Microsoft YaHei, sans-serif;
+        }
+        body {
+            background-color: #f5f2e9;
+            color: #332720;
+            line-height: 1.7;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .page-title {
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: #8b4513;
+            margin: 20px 0 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #d2b48c;
+        }
+        /* Tab导航样式 */
+        .tab-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            background-color: #332720;
+            border-radius: 8px 8px 0 0;
+            overflow: hidden;
+            margin-bottom: 0;
+        }
+        .tab-item {
+            flex: 1;
+            min-width: 120px;
+            text-align: center;
+            padding: 15px 10px;
+            color: #f5f2e9;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            background: transparent;
+        }
+        .tab-item.active {
+            background-color: #c87941;
+            font-weight: bold;
+        }
+        .tab-item:hover {
+            background-color: #5a4636;
+        }
+        /* Tab内容样式 */
+        .tab-content {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        /* 内容内样式 */
+        .content-title {
+            font-size: 22px;
+            color: #8b4513;
+            margin: 0 0 20px;
+            padding-left: 10px;
+            border-left: 4px solid #c87941;
+        }
+        .content-paragraph {
+            font-size: 16px;
+            margin-bottom: 20px;
+            text-indent: 2em;
+        }
+        .img-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 30px 0;
+        }
+        .img-item {
+            max-width: 300px;
+            width: 100%;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        /* 视频样式 */
+        .video-box {
+            margin-bottom: 20px;
+            text-align: center; /* 播放器水平居中 */
+        }
+         /* B站播放器样式：响应式适配+固定比例 */
+        .bilibili-player {
+            width: 100%;          /* 宽度自适应 */
+            max-width: 1000px;    /* 最大宽度，避免大屏拉伸 */
+            height: auto;         /* 高度自动 */
+            aspect-ratio: 16/9;   /* 16:9黄金比例，适配所有设备 */
+            border-radius: 8px;   /* 轻微圆角，更美观 */
+        }
+        .video-player {
+            width: 100%;
+            height: 450px;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.2);
+        }
+        .video-desc {
+            text-align: center;
+            margin-top: 10px;
+            color: #666;
+            font-size: 14px;
+        }
+        /* 守桥人故事样式 */
+        .story-card {
+            background-color: #faf6f0;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #d2b48c;
+        }
+        .story-title {
+            font-size: 20px;
+            color: #8b4513;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        /* AR互动样式 */
+        .ar-box {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #faf6f0;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .ar-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #c87941;
+            color: #fff;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 30px;
+            transition: all 0.3s;
+        }
+        .ar-btn:hover {
+            background-color: #8b4513;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(139,69,19,0.3);
+        }
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            .page-title {
+                font-size: 24px;
+            }
+            .tab-item {
+                font-size: 16px;
+                padding: 12px 5px;
+            }
+            .tab-content {
+                padding: 20px;
+            }
+            .video-player {
+                height: 280px;
+            }
+            .content-title {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="page-title">古桥新生—匠心技艺与数智融合赋能文脉传承</h1>
+
+    <!-- Tab导航栏 -->
+    <div class="tab-nav">
+        <button class="tab-item active" data-tab="tab1">南桥简介</button>
+        <button class="tab-item" data-tab="tab3">守桥人故事</button>
+        <button class="tab-item" data-tab="tab2">视频讲解</button>
+    </div>
+
+    <!-- Tab内容区域 -->
+    <div class="tab-content active" id="tab1">
+        <h2 class="content-title">元代南桥</h2>
+        <p class="content-paragraph">某市第一古桥，678年岁月沉淀，省级文保单位。始建于元至正九年（1349年），是该市乃至所在省现存年代最早、有确切纪年的古石桥，跨越七百余年风雨，至今屹立乡野、仍可通行。</p>
+        <p class="content-paragraph">南桥青石板路蜿蜒入野，古桥静卧南桥港畔，青苔覆石、草木绕身，满是岁月沧桑与乡野诗意。单孔半圆形拱洞，映于碧水成圆月，红砂石筑身、花岗岩为券，八字形挡水护坡墙以“丁”字法砌筑，古人工匠技艺尽显；全长36.7米，桥面独轮车碾压的深凹痕迹，是时光留下的珍贵印记。</p>
+        <div class="img-group">
+            <img src="https://s41.ax1x.com/2026/03/12/peASKHK.png" alt="武汉江夏南桥实景" class="img-item">
+            <img src="https://s41.ax1x.com/2026/03/12/peASIC4.jpg" alt="石碑" class="img-item">
+        </div>
+        <p class="content-paragraph">古时南桥为商贸要道，桥上客商络绎，桥下商船云集，周边茶楼、客栈林立，曾是繁华码头街市；康熙三十六年修葺，1985/1994/2015年三次保养，1989年获评省文物保护单位。</p>
+        <p class="content-paragraph">这里曾举办区首届端午“走桥”民俗活动，重现古桥端午繁华盛景！现场设古风市集、非遗展示、汉服体验、泊船码头等特色区域，编钟演奏、古筝合奏、古典舞《采薇》轮番上演，实景剧《南桥印象》沉浸式还原古桥历史，钟磬礼乐绕桥而行，让千年古桥在民俗雅韵中再绽芳华。</p>
+        <div class="img-group">
+        <img src="https://p0.itc.cn/q_70/images03/20220913/6d3aa6f8bcbd48058df00ed005c4aecb.jpeg  " alt="守桥人荣誉证书" class="img-item">
+        </div>
+        <p class="content-paragraph">饶姓富商出资建桥的传说流传至今，饶家后人饶浩功义务守桥33年，除草清淤、巡查守护，以家族初心护古桥安然；文旅部门专人看护，让这份历史传承生生不息。一古一今双桥相望，流水无言见证岁月变迁，这座古桥，是该市桥梁史的活标本，更是藏于乡野的文化符号。</p>
+    </div>
+    
+    <div class="tab-content" id="tab3">
+        <h2 class="content-title">守桥人故事</h2>
+        <div class="story-card">
+            <h3 class="story-title">跨越两代的承诺，守护七百年古桥春秋</h3>
+            <p class="content-paragraph">在该市某区陈六村的乡野间，一溪流水环绕着这座红砂岩单孔石拱桥——南桥。这座始建于元至正九年（1349年）的古桥，有第一桥之称，承载着近七百年的岁月沧桑。而让它穿越风雨留存至今的，是饶浩功、饶星火父子跨越两代的默默守护，一段藏在乡野间的温情坚守。</p>
+            <p class="content-paragraph">1985年，南桥部分桥身坍塌成危桥，文保部门组织修复，家住桥边的饶浩功成了向导。他每日跟着工作人员勘查清理，带领村民跳入河中，徒手摸回散落的石料。看着古桥渐复旧貌，饶浩功心中生出强烈的责任感。1986年，修复后的南桥出现挡土墙破损，这位只有小学文化的农民郑重承诺：“我一定会守好这座古桥。”一句承诺，便是三十六年的坚守。</p>
+             <div class="img-group">
+            <img src="https://p2.itc.cn/q_70/images03/20220913/95080cb9f32a402daf1616c30200e088.jpeg" alt="守桥人" class="img-item">
+             <img src="https://p5.itc.cn/q_70/images03/20220913/119a7024ed0047ecbc9a2e60685da6e8.jpeg" alt="守桥人" class="img-item">
+            </div>
+             <p class="content-paragraph">早年下田时，饶浩功每天清晨五点便途经南桥，清除杂草、捡拾垃圾、排查裂痕。七旬高龄后，双臂不利索的他开着农用三轮车巡桥，步行排查每一处细节。南桥成网红景点后，劝阻游客开车上桥、保护桥面，又成了他的日常。</p>
+            <p class="content-paragraph">守桥没有壮举，只有琐碎的坚持。桥体常因风雨出现裂痕，饶浩功便用自己的泥瓦匠手艺随时修补，家里常年备着自掏腰包买的沙子和水泥。他修补精益求精，曾因村民补的砖略高，坚决要求重来。饶浩功夫妻无稳定收入，妻子患帕金森病需治疗，可他仍把打零工的钱大多花在护桥上，从未计较开销。</p>
+            <p class="content-paragraph">南桥有段古老传说：饶氏先祖饶东山委托商人采购修桥石料，商人历经波折后履诺修桥。这段传说深深烙印在饶浩功心中，让他更坚定了守桥决心——他守护的不仅是古桥，更是先祖的诚信担当。多年坚守让他四次获评“模范义务保护员”，文保部门的补贴虽微薄，他却从未抱怨放弃。</p>
+            <p class="content-paragraph">岁月流转，饶浩功身体渐衰，担心南桥无人守护。好在二儿子饶星火早已耳濡目染，从小跟着父亲巡桥护桥，心中埋下守护的种子。饶浩功去世后，饶星火接过父亲的农用三轮车，也接过那份跨越两代的承诺，继续巡桥、护桥，向游客讲述南桥历史。</p>
+            <p class="content-paragraph">如今，南桥依旧静卧乡野，红砂岩桥面温润依旧。文保部门的大修与智能监测为古桥保驾护航，而饶星火的守护，仍是最温暖的屏障。两代人，一颗心，用平凡的坚守，守护着古桥春秋与历史记忆，让这份责任与担当，随南桥下的流水，代代相传。</p>
+            <div class="img-group">
+            <img src="https://p3.itc.cn/q_70/images03/20220913/4c8a6d42695e4f068ff67729266f9ede.jpeg" alt="守桥人" class="img-item">
+            <img src="http://hbwh.wenming.cn/sense_wh/202204/W020220407325594714861.png" alt="证书" class="img-item">
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-content" id="tab2">
+        <h2 class="content-title">南桥文化传承视频讲解</h2>
+        <div class="video-box">
+            <!-- 替换src为你的实际视频地址（支持mp4/ogg/webm），poster为视频封面图 -->
+            <!-- <video class="video-player" controls poster="南桥视频封面.jpg">
+                <source src=" https://www.bilibili.com/video/BV1kVQRBXEgQ?t=6.1" type="video/mp4">
+                您的浏览器不支持HTML5视频播放，请更换现代浏览器尝试
+            </video> -->
+            
+        <iframe  class="bilibili-player" 
+            src="//player.bilibili.com/player.html?isOutside=true&aid=116275938331385&bvid=BV1kVQRBXEgQ&cid=36901488163&p=1&danmaku=0&high_quality=1&volume=100" 
+            scrolling="no" 
+            border="0" 
+            frameborder="no" 
+            framespacing="0" 
+            allowfullscreen="true"
+            allow="autoplay; audio-playback; fullscreen">
+        </iframe>
+            <p class="video-desc">武汉江夏南桥——七百年古桥的新生与传承</p>
+        </div>
+        <p class="content-paragraph">本视频全景展现南桥的历史底蕴、建筑之美与守护故事，从元代建桥的历史背景，到古桥的营造技艺特色，再到饶氏父子两代人的守桥初心，以及数智技术赋能古桥保护的新探索，让千年古桥的文脉故事触手可及。</p>
+        <p class="content-paragraph">同时视频还原了南桥端午“走桥”民俗的繁华盛景，展现古桥在当代的文化活化利用，让文物不再是孤立的历史遗存，而是成为连接古今、传承乡土文化的鲜活载体。</p>
+    </div>
+
+   
+
+    <script>
+        // Tab栏切换逻辑
+        const tabItems = document.querySelectorAll('.tab-item');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabItems.forEach(item => {
+            item.addEventListener('click', () => {
+                // 移除所有active类
+                tabItems.forEach(ti => ti.classList.remove('active'));
+                tabContents.forEach(tc => tc.classList.remove('active'));
+                // 为当前点击项添加active
+                item.classList.add('active');
+                const tabId = item.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
